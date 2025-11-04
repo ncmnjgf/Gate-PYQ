@@ -1,0 +1,210 @@
+================================
+GATE PYQs - Environment Setup Instructions
+================================
+
+⚠️ IMPORTANT: Read this carefully to fix the errors!
+
+The errors you're seeing are because the environment variables (.env file)
+are not loading properly. Follow these steps exactly:
+
+================================
+STEP 1: Create/Update .env File
+================================
+
+1. Navigate to the folder: GateExamPyq\gate-pyqs\
+
+2. Look for a file named ".env" (it might be hidden)
+   - On Windows: Enable "Show hidden files" in File Explorer
+   - The file should be in the same folder as package.json
+
+3. If .env doesn't exist, create it:
+   - Right-click in the folder → New → Text Document
+   - Name it ".env" (EXACTLY - no .txt extension!)
+   - Windows might warn about changing extension - click YES
+
+4. Open .env in Notepad and paste EXACTLY this (no extra spaces):
+
+REACT_APP_GOOGLE_CLIENT_ID=119301795917-v8u8j1hjgnhi8satti8avecdrv9st3j1.apps.googleusercontent.com
+REACT_APP_GEMINI_API_KEY=AIzaSyAnUANAyuycJDg9rf0sml1xvQdPlZlcSgk
+REACT_APP_API_URL=https://gate.saumay.dev/api/v1/questions?
+
+5. Save and close the file
+
+IMPORTANT NOTES:
+- NO spaces before or after the = sign
+- NO quotes around the values
+- Each variable on its own line
+- File must be named ".env" EXACTLY (not .env.txt)
+
+================================
+STEP 2: Verify .env File
+================================
+
+Double-check your .env file looks EXACTLY like this:
+
+✓ Correct Format:
+REACT_APP_GOOGLE_CLIENT_ID=119301795917-v8u8j1hjgnhi8satti8avecdrv9st3j1.apps.googleusercontent.com
+
+✗ Wrong Format:
+REACT_APP_GOOGLE_CLIENT_ID = 119301795917-v8u8j1hjgnhi8satti8avecdrv9st3j1.apps.googleusercontent.com
+REACT_APP_GOOGLE_CLIENT_ID="119301795917-v8u8j1hjgnhi8satti8avecdrv9st3j1.apps.googleusercontent.com"
+
+================================
+STEP 3: Restart Development Server
+================================
+
+1. Stop the current server:
+   - Press Ctrl+C in the terminal
+   - Type 'Y' if prompted
+
+2. Clear the cache (optional but recommended):
+   npm run build
+
+3. Start the server again:
+   npm start
+
+4. Wait for the browser to open automatically
+   - If it doesn't, go to: http://localhost:3000
+
+================================
+STEP 4: Verify It's Working
+================================
+
+After restart, check:
+
+✓ No errors about "Client ID not found"
+✓ No errors about "Gemini API key not found"
+✓ Google Sign-In button appears in the header
+✓ No red errors in the browser console (F12)
+
+================================
+TROUBLESHOOTING
+================================
+
+If you still see errors:
+
+ERROR: "Client ID not found"
+SOLUTION:
+- Double-check .env file name (must be ".env" not ".env.txt")
+- Make sure no spaces around = sign
+- Restart the development server
+
+ERROR: "Gemini API key not found"
+SOLUTION:
+- Verify REACT_APP_GEMINI_API_KEY is in .env file
+- No quotes around the API key
+- Restart the development server
+
+ERROR: "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+SOLUTION:
+- Check your internet connection
+- Try different network if using VPN/proxy
+- Disable antivirus temporarily
+
+ERROR: "403 Forbidden" on Google Sign-In
+SOLUTION:
+- The Google Client ID might need to be updated
+- Go to: https://console.cloud.google.com/apis/credentials
+- Add http://localhost:3000 to authorized origins
+- Add http://localhost:3000 to authorized redirect URIs
+
+================================
+VERIFYING YOUR SETUP
+================================
+
+Your folder structure should look like this:
+
+GateExamPyq/
+└── gate-pyqs/
+    ├── .env                    ← THIS FILE MUST EXIST!
+    ├── .env.example
+    ├── package.json
+    ├── node_modules/
+    ├── public/
+    ├── src/
+    └── ...
+
+================================
+QUICK TEST
+================================
+
+Open Terminal/Command Prompt in gate-pyqs folder and run:
+
+Windows:
+type .env
+
+Mac/Linux:
+cat .env
+
+You should see your environment variables printed.
+If you get "file not found", the .env file doesn't exist.
+
+================================
+GETTING NEW API KEYS (Optional)
+================================
+
+If you want to use your own API keys:
+
+1. Google OAuth Client ID:
+   - Visit: https://console.cloud.google.com/
+   - Create new project
+   - Enable Google+ API
+   - Create OAuth 2.0 credentials
+   - Add authorized origins: http://localhost:3000
+   - Copy Client ID to .env
+
+2. Gemini API Key:
+   - Visit: https://makersuite.google.com/app/apikey
+   - Sign in with Google
+   - Click "Create API Key"
+   - Copy key to .env
+
+================================
+NEED MORE HELP?
+================================
+
+1. Check browser console for specific errors (F12)
+2. Check terminal for error messages
+3. Read SETUP_GUIDE.md for detailed instructions
+4. Make sure Node.js and npm are installed
+5. Try: npm install (to reinstall dependencies)
+
+================================
+COMMON MISTAKES TO AVOID
+================================
+
+❌ Adding quotes: REACT_APP_GOOGLE_CLIENT_ID="value"
+❌ Adding spaces: REACT_APP_GOOGLE_CLIENT_ID = value
+❌ Wrong file name: .env.txt or env.txt
+❌ Missing REACT_APP_ prefix
+❌ Not restarting server after changes
+❌ File in wrong location
+
+✅ Correct format: REACT_APP_GOOGLE_CLIENT_ID=value
+✅ File named exactly: .env
+✅ In correct folder: gate-pyqs/.env
+✅ Server restarted after changes
+
+================================
+FINAL CHECKLIST
+================================
+
+Before asking for help, verify:
+
+□ .env file exists in gate-pyqs folder
+□ .env contains all 3 required variables
+□ No quotes or extra spaces in .env
+□ Development server was restarted
+□ Browser was refreshed (Ctrl+Shift+R)
+□ No typos in variable names
+□ Internet connection is working
+
+================================
+
+If everything is set up correctly, you should see:
+- Google Sign-In button in the header
+- No console errors
+- Welcome page with "Sign In to Get Started"
+- After signing in, you can access Questions
+
+Good luck with your GATE preparation! 🎓

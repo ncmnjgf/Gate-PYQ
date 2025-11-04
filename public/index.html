@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>GATE PYQ's - Previous Year Questions with AI Solutions</title></title>
+    <meta name="description" content="Practice GATE Previous Year Questions with AI-powered explanations. Sign in to track your progress and get personalized study recommendations.">
+    <meta name="keywords" content="GATE, PYQ, Previous Year Questions, Engineering, GATE Preparation, AI Solutions">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="GATE PYQ's - Previous Year Questions with AI Solutions">
+    <meta property="og:description" content="Practice GATE Previous Year Questions with AI-powered explanations. Sign in to track your progress.">
+    <meta property="og:image" content="https://i1.sndcdn.com/avatars-TGzyyvwmcPvrirsi-1irVvA-t500x500.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gate.saumay.dev">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GATE PYQ's - Previous Year Questions with AI Solutions">
+    <meta name="twitter:description" content="Practice GATE Previous Year Questions with AI-powered explanations.">
+    <meta name="twitter:image" content="https://i1.sndcdn.com/avatars-TGzyyvwmcPvrirsi-1irVvA-t500x500.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#667eea">
+
+    <style>
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #e1bee7 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(102, 126, 234, 0.2);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .loading-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-icon">🎓</div>
+        <div class="loader"></div>
+        <div class="loading-text">Loading GATE PYQs...</div>
+    </div>
+
+    <!-- React Root -->
+    <div id="root"></div>
+
+    <!-- Analytics Script -->
+    <script>
+        fetch('https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgate.saumay.dev&count_bg=%2379C83D&title_bg=%23555555&icon=opsgenie.svg&icon_color=%23E7E7E7&title=visits&edge_flat=false')
+            .then()
+            .then()
+            .catch(err => console.error(err));
+
+        // Hide loading screen once React app is mounted
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('hidden');
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
